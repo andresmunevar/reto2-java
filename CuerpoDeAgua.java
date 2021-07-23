@@ -4,8 +4,22 @@ public class CuerpoDeAgua {
   private int id;
   private String town;
   private double irca;
-
   // Methods
+    // Constructors
+      // Empty
+  public CuerpoDeAgua() {  }
+      // With Params
+  public CuerpoDeAgua(
+    String name,
+    int id,
+    String town,
+    double irca
+  ){
+    this.name = name;
+    this.id = id;
+    this.town = town;
+    this.irca = irca;
+  }
   public String getName(){
     return name;
   }
@@ -30,7 +44,7 @@ public class CuerpoDeAgua {
   public void setIrca(double irca){
     this.irca = irca;
   }
-  public String category(double irca){
+  public String nivel(double irca){
     if (irca >= 80.1 && irca <= 100){
       return "INVIABLE SANITARIAMENTE";
     } else if (irca >= 35.1 && irca <= 80){
@@ -42,6 +56,6 @@ public class CuerpoDeAgua {
     } else if (irca >= 0 && irca <= 5){
       return "SIN RIESGO";
     }
-    return "0";
+    return null;
   }
 }
